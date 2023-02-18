@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane01" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginScreenControllerDB">
+   <children>
+      <ImageView fx:id="image01" fitHeight="219.0" fitWidth="232.0" layoutX="14.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="104.0" layoutY="14.0" text="Welcome to Sword Shop Of Thuan Hieu">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.8138801502504559" startX="0.11987381101782764" startY="0.25552050473186116">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.05000000074505806" green="0.09016913175582886" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <GridPane layoutX="243.0" layoutY="83.0" prefHeight="268.0" prefWidth="388.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.3333740234375" minWidth="10.0" prefWidth="80.00002034505208" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.00000000000003" minWidth="10.0" prefWidth="169.33331298828125" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.99998982747394" minWidth="10.0" prefWidth="135.66670735677081" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="User role:" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Label>
+            <RadioButton fx:id="customerRadio" mnemonicParsing="false" onAction="#onClickRadioChange" text="Customer ( only view )" textFill="#ebff00" GridPane.columnIndex="1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group123" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="masterRadio" mnemonicParsing="false" onAction="#onClickRadioChange" text="Master" textFill="#e8ff00" toggleGroup="$group123" GridPane.columnIndex="2" />
+            <Label text="Username:" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Password:" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="userNameText" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#onClickLoginButton" prefHeight="25.0" prefWidth="428.0" text="Login" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Button mnemonicParsing="false" onAction="#onClickRegisterButton" prefHeight="25.0" prefWidth="181.0" text="Need new account?" GridPane.columnSpan="2" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Button>
+            <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
+               <children>
+                  <TextField fx:id="showPasswordText" />
+                  <PasswordField fx:id="passwordText" />
+               </children>
+            </StackPane>
+            <CheckBox fx:id="checkBox" mnemonicParsing="false" onAction="#onClickChangeCheckBox" text="Show password" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+   </children>
+</Pane>
